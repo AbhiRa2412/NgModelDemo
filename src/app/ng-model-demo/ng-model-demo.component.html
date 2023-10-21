@@ -1,0 +1,11 @@
+<div class="formSection" *ngFor="let row of filter;let i = index">
+    <mat-form-field>
+      <mat-label>Favorite food</mat-label>
+      <mat-select [(ngModel)]="row.selFood" (selectionChange)="changeData(row,i)">
+        <mat-option *ngFor="let food of row.foodType" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span (click)="addRow(i)">+</span>
+  </div>
